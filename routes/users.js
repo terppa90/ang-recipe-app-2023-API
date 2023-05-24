@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const userCon = require('../controllers/UserController'); // user-reittien kontrolleri
 
-// käyttäjän login- ja rekisteröitymisreitit tulevat tähän
+// Käyttäjän login- ja rekisteröitymisreitit tulevat tähän
 
 /* GET users listing. */
 router.get('/', userCon.getUsers);

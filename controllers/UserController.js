@@ -2,11 +2,7 @@
 ja autentikaation sisältävä kontrolleri.
 
 Se sisältää kaksi metodia: registerUser jolla
-luodaan uusi käyttäjä kantaan joka pääsee samantien muokkaamaan kantaa
-
-ja authenticateUser jolla suoritetaan autentikaatio eli lähetetään tunnarit ja
-verrataan niitä kannassa oleviin ja jos on samat niin päästetään
-tekemään kannan muokkausta.
+luodaan uusi käyttäjä kantaan ja loginUser jolla käyttäjä kirjataan sisään.
 */
 
 const bcrypt = require('bcryptjs');

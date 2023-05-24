@@ -42,13 +42,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.static(path.join(__dirname, 'public')));
 
 // Import routes
-// const recipesRoute = require('./routes/recipes');
+const recipesRoute = require('./routes/recipes');
 const usersRoute = require('./routes/users');
 // const authRoute = require('./routes/auth');
 
 // reittien käyttöönotto
-// app.use('/recipes', recipesRoute);
-//app.use('/users', usersRouter);
+app.use('/recipes', recipesRoute);
 app.use('/users', usersRoute);
 // app.use('/users', authRoute);
 // Middleware
@@ -60,26 +59,26 @@ app.use(express.json());
 //   res.send('Hello NODE API');
 // });
 
-app.get('/recipes', async (req, res) => {
-  try {
-    const recipes = await Recipe.find({});
-    res.status(200).json(recipes);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-});
+// app.get('/recipes', async (req, res) => {
+//   try {
+//     const recipes = await Recipe.find({});
+//     res.status(200).json(recipes);
+//   } catch (error) {
+//     res.status(500).json({ message: error.message });
+//   }
+// });
 
-app.get('/recipes/:id', async (req, res) => {
-  await Recipe.findOne({ id: req.params.id }).then((recipe) => {
-    res.status(200).json(recipe);
-  });
-});
+// app.get('/recipes/:id', async (req, res) => {
+//   await Recipe.findOne({ id: req.params.id }).then((recipe) => {
+//     res.status(200).json(recipe);
+//   });
+// });
 
-app.post('/recipes', async (req, res) => {
-  await Recipe.create(req.body).then((recipe) => {
-    res.status(200).json(recipe);
-  });
-});
+// app.post('/recipes', async (req, res) => {
+//   await Recipe.create(req.body).then((recipe) => {
+//     res.status(200).json(recipe);
+//   });
+// });
 
 // app.put('/recipes/:id', async (req, res) => {
 //   try {
@@ -105,11 +104,11 @@ app.post('/recipes', async (req, res) => {
 //   });
 // });
 
-app.delete('/recipes/:id', async (req, res) => {
-  await Recipe.deleteOne({ id: req.params.id }).then((recipe) => {
-    res.status(200).json(recipe);
-  });
-});
+// app.delete('/recipes/:id', async (req, res) => {
+//   await Recipe.deleteOne({ id: req.params.id }).then((recipe) => {
+//     res.status(200).json(recipe);
+//   });
+// });
 
 // USER
 

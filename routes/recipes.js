@@ -6,12 +6,16 @@ const RecipeController = require('../controllers/recipecontroller');
 
 // const verify = require('./verifytoken'); // authorisointi eli vahvistetaan token
 
+// Reseptien reitit
+
 router.get('/', RecipeController.findAll);
 
-// router.get('/:id', RecipeController.findOneRecipe);
+router.get('/:id', RecipeController.findOneRecipe);
 
 router.post('/', RecipeController.addNewRecipe);
 
-// router.delete('/:id', RecipeController.deleteRecipe);
+router.delete('/:id', RecipeController.deleteRecipe);
+
+router.put('/:id', RecipeController.updateRecipe);
 
 module.exports = router;
