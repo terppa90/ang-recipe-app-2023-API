@@ -16,6 +16,8 @@ const RecipeController = {
     }
   },
 
+  // Nää täytys tehä
+
   // findOneRecipe: async (req, res) => {
   //   await Recipe.findOne({ id: req.params.id }).then((recipe) => {
   //     res.status(200).json(recipe);
