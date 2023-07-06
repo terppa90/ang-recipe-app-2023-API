@@ -30,8 +30,9 @@ const corsOptions = {
 };
 
 // view engine setup
-//app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'ejs');
+// app.set('views', path.join(__dirname, 'views'));
+app.set('views', __dirname);
+app.set('view engine', 'html');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -47,6 +48,7 @@ const usersRoute = require('./routes/users');
 // const authRoute = require('./routes/auth');
 
 // reittien käyttöönotto
+app.engine('html', require('ejs').renderFile);
 app.use('/recipes', recipesRoute);
 app.use('/users', usersRoute);
 // app.use('/users', authRoute);
@@ -55,9 +57,9 @@ app.use(express.json());
 
 // routes
 //request and response
-// app.get('/', (req, res) => {
-//   res.send('Hello NODE API');
-// });
+app.get('/', (req, res) => {
+  res.render('index');
+});
 
 // app.get('/recipes', async (req, res) => {
 //   try {
