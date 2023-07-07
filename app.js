@@ -25,7 +25,8 @@ require('dotenv').config(); //dotenv -moduuli tarvitaan jos aiotaan käyttää .
 // jos nämä sijaitsevat eri palvelimilla
 
 const corsOptions = {
-  origin: 'http://localhost:4200',
+  // origin: 'http://localhost:4200',
+  origin: 'https://recipe-app2023.web.app',
   optionsSuccessStatus: 200,
 };
 
